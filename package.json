@@ -1,0 +1,19 @@
+{
+  "name": "animalshogi-engine",
+  "version": "0.1.0",
+  "scripts": {
+    "main": "babel-node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindentree/animalshogi-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lindentree/animalshogi-engine/issues"
+  },
+  "homepage": "https://github.com/lindentree/animalshogi-engine#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
