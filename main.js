@@ -27,18 +27,20 @@ class Raion extends Piece {
 
 class Kirin extends Piece {
     reachableMoves(position) {
+        const {column, row} = position;
         return [
-            {column: position.column, row: position.row + 1}, {column: position.column + 1, row: position.row},
-            {column: position.column - 1, row: position.row}, {column: position.column, row: position.row - 1},
+            {column, row: row + 1}, {column: column + 1, row},
+            {column: column - 1, row}, {column, row: row - 1},
         ];
     }
 }
 
 class Zou extends Piece {
     reachableMoves(position) {
+        const {column, row} = position;
         return [
-            {column: position.column + 1, row: position.row + 1}, {column: position.column -1, row: position.row + 1},
-            {column: position.column - 1, row: position.row - 1}, {column: position.column + 1, row: position.row - 1},
+            {column: column + 1, row: row + 1}, {column: column - 1, row: row + 1},
+            {column: column - 1, row: row - 1}, {column: column + 1, row: row - 1},
       ];
   }
 }
@@ -52,10 +54,11 @@ class Hiyoko extends Piece {
 
 class Niwatori extends Piece {
     reachableMoves(position) {
+         const {column, row} = position;
          return [
-             {column: position.column, row: position.row + 1}, {column: position.column + 1, row: position.row + 1},
-             {column: position.column - 1, row: position.row + 1}, {column: position.column + 1, row: position.row},
-             {column: position.column - 1, row: position.row}, {column: position.column, row: position.row - 1},
+             {column, row: row + 1}, {column: column + 1, row: row + 1},
+             {column: column - 1, row: row + 1}, {column: column + 1, row},
+             {column: column - 1, row}, {column, row: row - 1},
          ];
     }
 }
