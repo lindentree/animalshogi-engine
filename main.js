@@ -9,6 +9,18 @@ class Piece {
     }
 
     legalMoves(position, board) {
+
+       function inBounds(position) {
+           const coordinates = Object.values(position);
+           const positionValue = coordinates.reduce(
+              ( accumulator, currentValue ) => accumulator * currentValue,
+              0
+           );
+               if (positionValue <= 6 && positionValue >= 0)  {
+                   return true;
+               }
+           return false;
+       }
     }
 
 }
@@ -47,17 +59,19 @@ class Zou extends Piece {
 
 class Hiyoko extends Piece {
     reachableMoves(position) {
+        const {column, row} = position;
         const forward = FORWARD[this.color];
-        return [{column: position.column, row: position.row + forward}];
+        return [{column, row: row + forward}];
     }
 }
 
 class Niwatori extends Piece {
     reachableMoves(position) {
          const {column, row} = position;
+         const forward = FORWARD[this.color];
          return [
-             {column, row: row + 1}, {column: column + 1, row: row + 1},
-             {column: column - 1, row: row + 1}, {column: column + 1, row},
+             {column, row: row + forward}, {column: column + 1, row: row + forward},
+             {column: column - 1, row: row + forward}, {column: column + 1, row},
              {column: column - 1, row}, {column, row: row - 1},
          ];
     }
