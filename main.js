@@ -9,18 +9,12 @@ class Piece {
     }
 
     legalMoves(position, board) {
-
-       function inBounds(position) {
-           const coordinates = Object.values(position);
-           const positionValue = coordinates.reduce(
-              ( accumulator, currentValue ) => accumulator * currentValue,
-              0
-           );
-               if (positionValue <= 6 && positionValue >= 0)  {
-                   return true;
-               }
-           return false;
-       }
+      function inBounds(column, row) {
+           if (0 <= column <= 2 && 0 <= row <= 3) {
+             return true;  
+           }
+        return false;
+      }
     }
 
 }
